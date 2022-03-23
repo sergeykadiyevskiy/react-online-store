@@ -1,3 +1,4 @@
+import React from 'react'
 import Home from "./routes/Home";
 
 const App = () => {

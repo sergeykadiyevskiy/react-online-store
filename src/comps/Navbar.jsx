@@ -45,6 +45,7 @@ const Center = styled.div`
 
 const Logo = styled.div`
 font-weight: bold;
+font-size: 30px
 `
 
 const Right = styled.div`
@@ -81,7 +82,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-        <Logo>Don't Say a Word</Logo>
+        <Logo>The S&K Group</Logo>
         </Center>
         <Right>
             <Menuitem>REGISTER</Menuitem>
