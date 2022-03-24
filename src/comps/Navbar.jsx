@@ -82,7 +82,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-        <Logo>The S&K Group</Logo>
+        <Logo>Styles by Sergey</Logo>
         </Center>
         <Right>
             <Menuitem>REGISTER</Menuitem>

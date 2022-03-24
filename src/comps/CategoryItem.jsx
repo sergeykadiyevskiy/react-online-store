@@ -25,7 +25,7 @@ const Info = styled.div`
 `
 const Title = styled.h1`
     color: #b8edff;
-    font-size: 60px;
+    font-size: 70px;
     margin-bottom: 20px;
     filter: drop-shadow(0 0 1rem crimson);
     
