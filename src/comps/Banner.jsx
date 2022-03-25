@@ -16,3 +16,5 @@ export const Banner = () => {
     <Container>Free Shipping + Returns, Free Membership, Exclusive Products</Container>
   )
 }
+
+export default Banner
