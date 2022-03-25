@@ -105,7 +105,7 @@ const Footer = () => {
           <ListItem>My Account</ListItem>
           <ListItem>Orders</ListItem>
           <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
+          <ListItem>Terms of Use</ListItem>
         </List>
       </Center>
       <Right>
