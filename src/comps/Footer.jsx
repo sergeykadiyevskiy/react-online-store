@@ -5,9 +5,11 @@ import LanguageIcon from "@mui/icons-material/Language";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({flexDirection: "column"})}
 `;
 const Left = styled.div`
   flex: 1;
@@ -38,6 +40,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({display: "none"})}
 `;
 
 const Title = styled.h3`
@@ -58,6 +61,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({backgroundColor: "#d1fff4"})}
 `;
 
 const ContactItem = styled.div`
