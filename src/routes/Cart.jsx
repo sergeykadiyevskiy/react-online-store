@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Navbar from "../comps/Navbar";
 import { Banner } from "../comps/Banner";
 import Footer from "../comps/Footer";
+import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 const Container = styled.div``;
 
@@ -46,9 +48,6 @@ const Bottom = styled.div`
 const Info = styled.div`
   flex: 3;
 `;
-const Summary = styled.div`
-  flex: 1;
-`;
 
 const Product = styled.div`
   display: flex;
@@ -63,19 +62,89 @@ const Image = styled.img`
   width: 200px;
 `;
 
-const Details = styled.div``;
+const Details = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
 
 const ProductName = styled.span``;
 
 const ProductId = styled.span``;
 
-const ProductColor = styled.div``;
+const ProductColor = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: ${(props) => props.color};
+`;
 
 const ProductSize = styled.span``;
 
 const PriceDetail = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
+
+const ProductAmountContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+
+const ProductAmount = styled.div`
+  font-size: 24px;
+  margin: 5px;
+`;
+
+const ProductPrice = styled.div`
+  font-size: 30px;
+  font-weight: 200;
+`;
+
+const Hr = styled.hr`
+  background-color: #eee;
+  border: none;
+  height: 1px;
+`;
+
+const Summary = styled.div`
+  flex: 1;
+  border: 0.5px solid lightgray;
+  padding: 20px;
+  height: 50vh;
+`;
+
+const SummaryTitle = styled.h1`
+  font-weight: 200;
+`
+
+const SummaryItem = styled.div`
+  margin: 30px; 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${props=>props.type === "total" && "500"};
+  font-size: ${props=>props.type === "total" && "24px"};
+`
+
+const SummaryItemText = styled.span``
+
+const SummaryItemPrice = styled.span``
+
+const SummaryButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  border: none;
+  color: white;
+  font-weight: 600;
+`
+
+
 
 const Cart = () => {
   return (
@@ -104,16 +173,68 @@ const Cart = () => {
                   <ProductId>
                     <b>ID:</b> 9536376213
                   </ProductId>
-                  <ProductColor />
+                  <ProductColor color="black" />
                   <ProductSize>
                     <b>Size:</b>M 8.5 / W 10
                   </ProductSize>
                 </Details>
               </ProductDetail>
-              <PriceDetail>Price</PriceDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <RemoveOutlinedIcon />
+                  <ProductAmount>1</ProductAmount>
+                  <AddOutlinedIcon />
+                </ProductAmountContainer>
+                <ProductPrice>$ 210</ProductPrice>
+              </PriceDetail>
+            </Product>
+            <Hr />
+            <Product>
+              <ProductDetail>
+                <Image src="https://i.imgur.com/lQ0Qfsb.png" />
+                <Details>
+                  <ProductName>
+                    <b>Item:</b> Air Max Terrascape
+                  </ProductName>
+                  <ProductId>
+                    <b>ID:</b> 9884612314
+                  </ProductId>
+                  <ProductColor color="#d3d7b9" />
+                  <ProductSize>
+                    <b>Size:</b>M 8.5 / W 10
+                  </ProductSize>
+                </Details>
+              </ProductDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <RemoveOutlinedIcon />
+                  <ProductAmount>1</ProductAmount>
+                  <AddOutlinedIcon />
+                </ProductAmountContainer>
+                <ProductPrice>$ 185</ProductPrice>
+              </PriceDetail>
             </Product>
           </Info>
-          <Summary>Summary</Summary>
+          <Summary>
+            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryItem>
+              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemPrice>$ 395</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemPrice>$ 7.80</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemPrice>$ -7.80</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>$ 395</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryButton>CHECKOUT NOW</SummaryButton>
+          </Summary>
         </Bottom>
       </Wrapper>
       <Footer />
