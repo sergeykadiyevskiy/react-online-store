@@ -14,6 +14,8 @@ ${mobile({fontSize: "12px"})}
 `
 
 export const Banner = () => {
+
+  
   return (
     <Container>Free Shipping + Returns, Free Membership, Exclusive Products</Container>
   )
