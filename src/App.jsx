@@ -7,7 +7,7 @@ import ProductList from './routes/ProductList';
 import Register from './routes/Register';
 
 const App = () => {
-  return <Home /> ;
+  return <Cart /> ;
 };
 
 export default App;
