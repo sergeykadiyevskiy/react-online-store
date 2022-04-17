@@ -5,17 +5,18 @@ import Login from './routes/Login';
 import Product from './routes/Product';
 import ProductList from './routes/ProductList';
 import Register from './routes/Register';
+import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
 
 const App = () => {
-  return<div>
-<Home />
-<Cart />
-<Login />
-<ProductList />
-<Product />
-<Register />
-
-  </div>  ;
+  return (
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/products' element={<ProductList/>}/>
+               
+      </Routes>
+    </Router>
+  ) ;
 };
 
 export default App;
