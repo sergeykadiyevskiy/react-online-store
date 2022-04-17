@@ -33,22 +33,26 @@ export const  categories = [
     {
         id: 1,
         img: "http://vectips.com/wp-content/uploads/2011/03/wi114-19.jpeg",
-        title: "STOMP"
+        title: "STOMP",
+        category: "lifestyle",
     },
     {
         id: 2,
         img: "https://i.imgur.com/NEBEFL1.png",
-        title: "DRIP"
+        title: "DRIP",
+        category: "running",
     },
     {
         id: 3,
         img: "https://i.pinimg.com/564x/73/ec/39/73ec395631d50cd9a4b8b2f9729a9c7e.jpg",
-        title: "RISE"
+        title: "RISE",
+        category: "upscale",
     },
     {
         id: 4,
         img: "https://i.pinimg.com/564x/7e/0a/34/7e0a3442b22e18b53c982b390ffa2c2a.jpg",
-        title: "BURST"
+        title: "BURST",
+        category: "sport"
     },
 ]
 
