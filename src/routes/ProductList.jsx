@@ -38,14 +38,14 @@ const Option = styled.option``;
 
 const ProductList = () => {
   const location = useLocation()
-  const category = location.pathname.split("/")[2]
-  const [filter, setFilter] = useState({})
+  const category = location.pathname.split("/")[0]
+  const [filters, setFilters] = useState({})
   const [sort, setSort] = useState("Featured")
 
   const handleFilters = (e) => {
     const value = e.target.value
-    setFilter({
-      ...filter,
+    setFilters({
+      ...filters,
       [e.target.name]: value,
     });
   }
@@ -63,10 +63,10 @@ const ProductList = () => {
             <Option disabled>
               Activities
             </Option>
-            <Option>Lifestyle</Option>
-            <Option>Running</Option>
-            <Option>Upscale</Option>
-            <Option>Sport</Option>
+            <Option>lifestyle</Option>
+            <Option>running</Option>
+            <Option>upscale</Option>
+            <Option>sport</Option>
           </Select>
           <Select name="size" onChange={handleFilters}>
             <Option disabled>
@@ -80,16 +80,6 @@ const ProductList = () => {
             <Option>M 8 / W 9.5</Option>
             <Option>M 8.5 / W 10</Option>
             <Option>M 9 / W 10.5</Option>
-            <Option>M 9.5 / W 11</Option>
-            <Option>M 10 / W 11.5</Option>
-            <Option>M 10.5 / W 12</Option>
-            <Option>M 11 / W 12.5</Option>
-            <Option>M 11.5 / W 13</Option>
-            <Option>M 12 / W 13.5</Option>
-            <Option>M 12.5 / W 14</Option>
-            <Option>M 13 / W 14.5</Option>
-            <Option>M 13.5 / W 15</Option>
-            <Option>M 14 / W 15.5</Option>
           </Select>
         </Filter>
         <Filter>
@@ -101,7 +91,7 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products  category={category} filter={filter} sort={sort}/>
+      <Products  category={category} filter={filters} sort={sort}/>
       <Newsletter />
       <Footer />
     </Container>

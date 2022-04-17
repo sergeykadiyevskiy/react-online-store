@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Products = ({ category, filter, sort }) => {
+const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -24,6 +24,7 @@ const Products = ({ category, filter, sort }) => {
             : "http://localhost:3001/api/products"
         );
         setProducts(res.data);
+        console.log(res.data)
       } catch (err) {}
     };
     getProducts();
@@ -33,18 +34,36 @@ const Products = ({ category, filter, sort }) => {
     category &&
       setFilteredProducts(
         products.filter((item) =>
-          Object.entries(filter).every(([key, value]) =>
+          Object.entries(filters).every(([key, value]) =>
             item[key].includes(value)
           )
         )
       );
-  }, [products, category, filter]);
+  }, [products, category, filters]);
+
+  useEffect(() => {
+    if (sort === "Featured") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+      );
+    } else if (sort === "asc") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.price - b.price)
+      );
+    } else {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => b.price - a.price)
+      );
+    }
+  }, [sort]);
 
   return (
     <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
+      {category
+        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+        : products
+            .slice(0, 12)
+            .map((item) => <Product item={item} key={item.id} />)}
     </Container>
   );
 };
