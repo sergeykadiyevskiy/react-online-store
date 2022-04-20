@@ -41,14 +41,14 @@ const Circle = styled.div`
 `
 
 const Image = styled.img`
-    height: 75%;
     z-index: 2;
+    height: 75%;
 `
 const Icon = styled.div`
-    width: 40px;
     height: 40px;
-    border-radius: 50%;
+    width: 40px;
     background-color: white;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
