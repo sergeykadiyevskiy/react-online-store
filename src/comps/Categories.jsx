@@ -5,8 +5,8 @@ import CategoryItem from './CategoryItem'
 
 
 const Container = styled.div`
-    display: flex;
     padding: 20px; 
+    display: flex;
     justify-content: space-between;   
     ${mobile({padding: "0px", flexDirection: "column"})}
 `

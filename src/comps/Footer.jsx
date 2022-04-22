@@ -65,8 +65,8 @@ const Right = styled.div`
 `;
 
 const ContactItem = styled.div`
-    margin-bottom: 20px;
     display: flex;
+    margin-bottom: 20px;
     align-items: center;
 `;
 

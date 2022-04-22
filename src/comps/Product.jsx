@@ -21,8 +21,8 @@ const Container = styled.div`
     flex: 1;
     margin: 5px;
     min-width: 280px;
-    height: 350px;
     display: flex;
+    height: 350px;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to bottom right, #d1fff4, #ffcab8);
@@ -34,8 +34,8 @@ const Container = styled.div`
 `
 const Circle = styled.div`
     width: 200px;
-    height: 200px;
     border-radius: 50%;
+    height: 200px;
     background-color: white;
     position: absolute;
 `
