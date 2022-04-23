@@ -48,8 +48,8 @@ const Title = styled.h3`
 `;
 const List = styled.ul`
   margin: 0;
-  padding: 0;
   list-style: none;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
 `;

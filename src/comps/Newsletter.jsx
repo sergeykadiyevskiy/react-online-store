@@ -7,8 +7,8 @@ const Container = styled.div`
     height: 60vh;
     background-image: linear-gradient(to bottom right, #ffcab8, #d1fff4);;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 `
 const Title = styled.h1`

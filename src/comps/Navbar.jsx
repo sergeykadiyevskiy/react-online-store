@@ -73,8 +73,8 @@ ${mobile({fontSize: "12px", marginLeft: "10px"})};
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       right: -2,
-      top: 0,
       border: `2px solid `,
+      top: 0,
       padding: '0 4px',
     },
   }));
