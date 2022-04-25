@@ -23,8 +23,8 @@ const Container = styled.div`
     min-width: 280px;
     display: flex;
     height: 350px;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     background-image: linear-gradient(to bottom right, #d1fff4, #ffcab8);
     position: relative;
     

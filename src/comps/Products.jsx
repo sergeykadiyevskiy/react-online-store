@@ -7,8 +7,8 @@ import axios from "axios";
 const Container = styled.div`
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const Products = ({ category, filters, sort }) => {
