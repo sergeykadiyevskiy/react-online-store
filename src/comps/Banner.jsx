@@ -6,8 +6,8 @@ height: 30px;
 background-color: #386183;
 color: white;
 display: flex;
-align-items: center;
 justify-content: center;
+align-items: center;
 font-weight: 500;
 font-size: 14px;
 ${mobile({fontSize: "12px"})}
