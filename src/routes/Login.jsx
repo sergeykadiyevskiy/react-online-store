@@ -12,14 +12,14 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   width: 25%;
-  padding: 20px;
   background-color: white;
+  padding: 20px;
   ${mobile({width: "75%"})}
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
   font-weight: 300;
+  font-size: 24px;
 `;
 
 const Form = styled.form`
@@ -38,8 +38,8 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: #386183;
   color: white;
+  background-color: #386183;
   cursor: pointer;
   margin-bottom: 10;
 `;
