@@ -81,8 +81,8 @@ const FilterSizeOption = styled.option``;
 const AddContainer = styled.div`
   width: 50%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   ${mobile({width: "100%"})}
 `;
 
@@ -98,8 +98,8 @@ const Amount = styled.span`
   border-radius: 10px;
   border: 1px solid #386183;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin: 0px 5px;
 `;
 

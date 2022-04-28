@@ -30,15 +30,15 @@ const Form = styled.form`
 const Input = styled.input`
   flex: 1;
   min-width: 40%;
-  margin: 10px 0;
   padding: 10px;
+  margin: 10px 0;
 `;
 
 const Button = styled.button`
   width: 40%;
   border: none;
-  padding: 15px 20px;
   color: white;
+  padding: 15px 20px;
   background-color: #386183;
   cursor: pointer;
   margin-bottom: 10;
