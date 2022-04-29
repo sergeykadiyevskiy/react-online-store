@@ -7,13 +7,13 @@ const Container = styled.div`
   background: url("https://i.imgur.com/hKQMcZb.jpg") center;
   background-size: cover;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 `;
 const Wrapper = styled.div`
   width: 25%;
-  background-color: white;
   padding: 20px;
+  background-color: white;
   ${mobile({width: "75%"})}
 `;
 
