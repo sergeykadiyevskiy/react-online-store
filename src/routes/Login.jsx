@@ -37,8 +37,8 @@ const Input = styled.input`
 const Button = styled.button`
   width: 40%;
   border: none;
-  color: white;
   padding: 15px 20px;
+  color: white;
   background-color: #386183;
   cursor: pointer;
   margin-bottom: 10;
