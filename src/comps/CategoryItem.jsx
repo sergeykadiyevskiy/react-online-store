@@ -20,8 +20,8 @@ const Info = styled.div`
     top: 0;
     height: 100%;
     display: flex;
-    width: 100%;
     flex-direction: column;
+    width: 100%;
     align-items: center;
     justify-content: center;
 `

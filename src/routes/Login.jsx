@@ -5,8 +5,8 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: url("https://i.imgur.com/hKQMcZb.jpg") center;
-  background-size: cover;
   display: flex;
+  background-size: cover;
   justify-content: center;
   align-items: center;
 `;
