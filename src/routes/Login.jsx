@@ -12,8 +12,8 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
   width: 25%;
-  padding: 20px;
   background-color: white;
+  padding: 20px;
   ${mobile({width: "75%"})}
 `;
 
