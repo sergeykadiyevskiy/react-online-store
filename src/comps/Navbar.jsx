@@ -58,8 +58,8 @@ ${mobile({fontSize: "15px"})}
 const Right = styled.div`
   flex: 1;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
   ${mobile({flex: 2,justifyContent: "space-around",marginRight: "5px"})}
 `;
 
