@@ -25,8 +25,8 @@ const Description = styled.div`
 const InputContainer = styled.div`
     width: 40%;
     height: 40px;
-    background-color: white;
     display: flex;
+    background-color: white;
     justify-content: space-between;
     border: 1px solid lightgray;
     ${mobile({width: "70%"})}
