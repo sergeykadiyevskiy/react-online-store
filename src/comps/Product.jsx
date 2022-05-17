@@ -50,8 +50,8 @@ const Icon = styled.div`
     background-color: white;
     display: flex;
     align-items: center;
-    border-radius: 50%;
     justify-content: center;
+    border-radius: 50%;
     margin: 10px;
     transition: all 0.5s ease;
     cursor: pointer;
