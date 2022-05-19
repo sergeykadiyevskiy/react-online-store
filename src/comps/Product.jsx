@@ -34,8 +34,8 @@ const Container = styled.div`
 `
 const Circle = styled.div`
     width: 200px;
-    border-radius: 50%;
     height: 200px;
+    border-radius: 50%;
     background-color: white;
     position: absolute;
 `
@@ -47,8 +47,8 @@ const Image = styled.img`
 const Icon = styled.div`
     height: 40px;
     width: 40px;
-    background-color: white;
     display: flex;
+    background-color: white;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
