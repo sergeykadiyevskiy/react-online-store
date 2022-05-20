@@ -48,9 +48,9 @@ const Icon = styled.div`
     height: 40px;
     width: 40px;
     display: flex;
-    background-color: white;
     align-items: center;
     justify-content: center;
+    background-color: white;
     border-radius: 50%;
     margin: 10px;
     transition: all 0.5s ease;
