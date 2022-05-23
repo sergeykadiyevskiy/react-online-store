@@ -18,8 +18,8 @@ const Info = styled.div`
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
     display: flex;
+    height: 100%;
     flex-direction: column;
     width: 100%;
     align-items: center;
