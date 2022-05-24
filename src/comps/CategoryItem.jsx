@@ -19,8 +19,8 @@ const Info = styled.div`
     left: 0;
     top: 0;
     display: flex;
-    height: 100%;
     flex-direction: column;
+    height: 100%;
     width: 100%;
     align-items: center;
     justify-content: center;
