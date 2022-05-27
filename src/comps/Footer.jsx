@@ -29,8 +29,8 @@ const SocialIcon = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: ${(props) => props.color};
   display: flex;
+  background-color: ${(props) => props.color};
   color: white;
   align-items: center;
   justify-content: center;
@@ -47,8 +47,8 @@ const Title = styled.h3`
   margin-bottom: 30px;
 `;
 const List = styled.ul`
-  margin: 0;
   display: flex;
+  margin: 0;
   padding: 0;
   list-style: none;
   flex-wrap: wrap;
