@@ -28,8 +28,8 @@ const SocialContainer = styled.div`
 const SocialIcon = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   display: flex;
+  border-radius: 50%;
   background-color: ${(props) => props.color};
   color: white;
   align-items: center;
