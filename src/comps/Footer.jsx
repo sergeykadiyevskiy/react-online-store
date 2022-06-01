@@ -26,9 +26,9 @@ const SocialContainer = styled.div`
   display: flex;
 `;
 const SocialIcon = styled.div`
+  display: flex;
   width: 40px;
   height: 40px;
-  display: flex;
   border-radius: 50%;
   background-color: ${(props) => props.color};
   color: white;
