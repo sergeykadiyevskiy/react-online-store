@@ -47,8 +47,8 @@ const Title = styled.h3`
   margin-bottom: 30px;
 `;
 const List = styled.ul`
-  display: flex;
   margin: 0;
+  display: flex;
   padding: 0;
   list-style: none;
   flex-wrap: wrap;
