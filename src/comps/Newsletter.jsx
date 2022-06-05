@@ -23,9 +23,9 @@ const Description = styled.div`
     ${mobile({textAlign: "center"})}
 `
 const InputContainer = styled.div`
-    display: flex;
     width: 40%;
     height: 40px;
+    display: flex;
     background-color: white;
     justify-content: space-between;
     border: 1px solid lightgray;
