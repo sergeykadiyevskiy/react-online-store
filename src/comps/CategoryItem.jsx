@@ -16,9 +16,9 @@ const Image = styled.img`
 `
 const Info = styled.div`
     position: absolute;
+    display: flex;
     left: 0;
     top: 0;
-    display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
