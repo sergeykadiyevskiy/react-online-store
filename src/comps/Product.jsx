@@ -20,10 +20,10 @@ const Info = styled.div`
 const Container = styled.div`
     flex: 1;
     margin: 5px;
-    min-width: 280px;
     display: flex;
-    height: 350px;
+    min-width: 280px;
     justify-content: center;
+    height: 350px;
     align-items: center;
     background-image: linear-gradient(to bottom right, #d1fff4, #ffcab8);
     position: relative;

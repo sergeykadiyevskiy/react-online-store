@@ -16,8 +16,8 @@ const Image = styled.img`
 `
 const Info = styled.div`
     position: absolute;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     left: 0;
     top: 0;
     width: 100%;
