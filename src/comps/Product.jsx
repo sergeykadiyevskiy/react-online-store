@@ -21,8 +21,8 @@ const Container = styled.div`
     flex: 1;
     margin: 5px;
     display: flex;
-    min-width: 280px;
     justify-content: center;
+    min-width: 280px;
     height: 350px;
     align-items: center;
     background-image: linear-gradient(to bottom right, #d1fff4, #ffcab8);
@@ -49,8 +49,8 @@ const Icon = styled.div`
     width: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
     background-color: white;
+    justify-content: center;
     border-radius: 50%;
     margin: 10px;
     transition: all 0.5s ease;
