@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
 
+
 const Container = styled.div``;
 const Title = styled.h1`
   margin: 20px;
@@ -38,9 +39,10 @@ const Option = styled.option``;
 
 const ProductList = () => {
   const location = useLocation()
-  const category = location.pathname.split("/")[0]
+  const cat = location.pathname.split("/")[2]
+  console.log(cat)
   const [filters, setFilters] = useState({})
-  const [sort, setSort] = useState("Featured")
+  const [sort, setSort] = useState("featured")
 
   const handleFilters = (e) => {
     const value = e.target.value
@@ -50,23 +52,33 @@ const ProductList = () => {
     });
   }
 
+  console.log(filters)
 
   return (
     <Container>
       <Navbar />
       <Banner />
-      <Title>Stomp</Title>
+      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter:</FilterText>
-          <Select name="activity" onChange={handleFilters}>
+          <Select name="color" onChange={handleFilters}>
             <Option disabled>
-              Activities
+              Color
             </Option>
-            <Option>lifestyle</Option>
-            <Option>running</Option>
-            <Option>upscale</Option>
-            <Option>sport</Option>
+            <Option>Beige</Option>
+            <Option>Black</Option>
+            <Option>Blue</Option>
+            <Option>Gold</Option>
+            <Option>Green</Option>
+            <Option>Grey</Option>
+            <Option>Lime</Option>
+            <Option>Orange</Option>
+            <Option>Purple</Option>
+            <Option>Stealth</Option>
+            <Option>Tan</Option>
+            <Option>White</Option>
+            <Option>Yellow</Option>
           </Select>
           <Select name="size" onChange={handleFilters}>
             <Option disabled>
@@ -91,7 +103,7 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products  category={category} filter={filters} sort={sort}/>
+      <Products  cat={cat} filter={filters} sort={sort}/>
       <Newsletter />
       <Footer />
     </Container>

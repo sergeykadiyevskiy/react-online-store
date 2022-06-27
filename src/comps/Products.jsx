@@ -12,6 +12,7 @@ const Container = styled.div`
 `;
 
 const Products = ({ category, filters, sort }) => {
+  console.log(category, filters, sort)
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -20,7 +21,7 @@ const Products = ({ category, filters, sort }) => {
       try {
         const res = await axios.get(
           category
-            ? `http://localhost:3001/api/products?categories=${category}`
+            ? `http://localhost:3001/api/products?category=${category}`
             : "http://localhost:3001/api/products"
         );
         setProducts(res.data);
@@ -41,7 +42,7 @@ const Products = ({ category, filters, sort }) => {
   }, [products, category, filters]);
 
   useEffect(() => {
-    if (sort === "Featured") {
+    if (sort === "featured") {
       setFilteredProducts((prev) =>
         [...prev].sort((a, b) => a.createdAt - b.createdAt)
       );
