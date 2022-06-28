@@ -17,8 +17,8 @@ const Title = styled.h1`
     ${mobile({fontSize: "65px"})}
 `
 const Description = styled.div`
-    font-size: 24px;
     margin-bottom: 20px;
+    font-size: 24px;
     font-weight: 300;
     ${mobile({textAlign: "center"})}
 `
