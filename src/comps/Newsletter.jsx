@@ -24,8 +24,8 @@ const Description = styled.div`
 `
 const InputContainer = styled.div`
     display: flex;
-    width: 40%;
     height: 40px;
+    width: 40%;
     background-color: white;
     justify-content: space-between;
     border: 1px solid lightgray;
