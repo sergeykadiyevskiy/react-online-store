@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Products = ({ category, filters, sort }) => {
-  console.log(category, filters, sort)
+  console.log(category, filters, sort);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -25,7 +25,7 @@ const Products = ({ category, filters, sort }) => {
             : "http://localhost:3001/api/products"
         );
         setProducts(res.data);
-             } catch (err) {}
+      } catch (err) {}
     };
     getProducts();
   }, [category]);
@@ -62,7 +62,7 @@ const Products = ({ category, filters, sort }) => {
       {category
         ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
         : products
-            .slice(0, 14)
+            .slice(0, 20)
             .map((item) => <Product item={item} key={item.id} />)}
     </Container>
   );

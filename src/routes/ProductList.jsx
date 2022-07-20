@@ -39,8 +39,7 @@ const Option = styled.option``;
 
 const ProductList = () => {
   const location = useLocation()
-  const cat = location.pathname.split("/")[2]
-  console.log(cat)
+  const cat = location.pathname.split("/")[2];
   const [filters, setFilters] = useState({})
   const [sort, setSort] = useState("featured")
 
@@ -48,11 +47,10 @@ const ProductList = () => {
     const value = e.target.value
     setFilters({
       ...filters,
-      [e.target.name]: value,
+      [e.target.name]: value.toLowerCase(),
     });
   }
 
-  console.log(filters)
 
   return (
     <Container>
@@ -97,13 +95,13 @@ const ProductList = () => {
         <Filter>
           <FilterText>Sort:</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>
-              <Option value="featured">Featured</Option>
+              <Option value="featured">featured</Option>
               <Option value="asc">Price (asc)</Option>
               <Option value="desc">Price (desc)</Option>
           </Select>
         </Filter>
       </FilterContainer>
-      <Products  cat={cat} filter={filters} sort={sort}/>
+      <Products cat={cat} filters={filters} sort={sort} />
       <Newsletter />
       <Footer />
     </Container>

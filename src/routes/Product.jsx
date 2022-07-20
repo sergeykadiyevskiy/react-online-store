@@ -6,13 +6,19 @@ import Footer from "../comps/Footer";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { publicRequest } from "../requestMethods";
+import { React, useState } from "react";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
-  ${mobile({padding: "10px", flexDirection: "column"})}
+  ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 const ImageContainer = styled.div`
   flex: 1;
@@ -21,13 +27,13 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  ${mobile({height: "40vh"})}
+  ${mobile({ height: "40vh" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
-  ${mobile({padding: "10px"})}
+  ${mobile({ padding: "10px" })}
 `;
 const Title = styled.h1`
   font-weight: 200;
@@ -45,7 +51,7 @@ const FilterContainer = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
-  ${mobile({width: "100%"})}
+  ${mobile({ width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -83,7 +89,7 @@ const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${mobile({width: "100%"})}
+  ${mobile({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`
@@ -116,51 +122,71 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState(null);
+  const [size, setsize] = useState(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const handleClick = () => {
+    dispatch(addProduct({ ...product, quantity, color, size }));
+  };
+
   return (
     <Container>
       <Navbar />
       <Banner />
       <Wrapper>
         <ImageContainer>
-          <Image src="https://i.imgur.com/9lPaFl4.png" />
+          <Image src={product.image} />
         </ImageContainer>
         <InfoContainer>
-          <Title>Air Jordan 32's</Title>
-          <Description>
-            Exercitation duis elit Lorem fugiat officia aliquip sit. Dolor
-            consectetur esse eiusmod enim dolor incididunt nisi. Qui Lorem anim
-            labore cillum dolor enim sunt ut minim aliquip non. Ipsum elit
-            deserunt cillum incididunt anim minim ex deserunt dolor. Do esse
-            irure adipisicing occaecat laborum est velit ullamco Lorem nisi
-            quis. Est occaecat proident pariatur commodo.
-          </Description>
-          <Price>$ 285</Price>
+          <Title>{product.title}</Title>
+          <Description>{product.desription}</Description>
+          <Price>{product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="#a66f88" />
-              <FilterColor color="#fb7d5a" />
-              <FilterColor color="#aafcfa" />
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>M 5.5 / W 7</FilterSizeOption>
-                <FilterSizeOption>M 7 / W 8.5</FilterSizeOption>
-                <FilterSizeOption>M 8.5 / W 10</FilterSizeOption>
-                <FilterSizeOption>M 9.5 / W 11</FilterSizeOption>
-                <FilterSizeOption>M 11 / W 12.5</FilterSizeOption>
-                <FilterSizeOption>M 14 / W 15.5</FilterSizeOption>
+              <FilterSize onChange={(e) => setsize(e.target.value)}>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <RemoveOutlinedIcon />
-              <Amount>1</Amount>
-              <AddOutlinedIcon />
+              <RemoveOutlinedIcon onClick={() => handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <AddOutlinedIcon onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
