@@ -70,6 +70,7 @@ const FilterColor = styled.div`
     border-radius: 50%;
     background-color: ${(props) => props.color};
     margin: 0px 5px;
+    border: 1px dotted black;
     cursor: pointer;
     transition: all 0.5s ease;
     &:hover{
